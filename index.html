@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srishti Gupta — AI-Native Marketing Generalist</title>
+    <meta name="description" content="Portfolio of Srishti Gupta — B2B Marketing, GTM Strategy, AI-Powered Content, and MarTech Execution.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CSS RESET & VARIABLES ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #070709;
+            --bg-secondary: #0d0d10;
+            --bg-card: #111115;
+            --bg-card-hover: #18181e;
+            --accent: #7c3aed;
+            --accent-bright: #a78bfa;
+            --accent-dim: rgba(124, 58, 237, 0.12);
+            --accent-glow: rgba(124, 58, 237, 0.4);
+            --text-primary: #ffffff;
+            --text-secondary: #9090a8;
+            --text-muted: #50505e;
+            --border: #1e1e24;
+            --border-light: #2a2a35;
+            --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Space Grotesk', -apple-system, sans-serif;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --max-width: 1200px;
+            --cyan: #06b6d4;
+            --cyan-bright: #22d3ee;
+            --cyan-dim: rgba(6, 182, 212, 0.1);
+            --cyan-glow: rgba(6, 182, 212, 0.35);
+            --gradient-accent: linear-gradient(135deg, #7c3aed, #6d28d9);
+            --gradient-accent-vivid: linear-gradient(135deg, #a78bfa, #8b5cf6, #7c3aed);
+            --gradient-cyber: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+            --gradient-cyber-vivid: linear-gradient(135deg, #a78bfa 0%, #22d3ee 100%);
+            --purple-sweep: rgba(109, 40, 217, 0.55);
+            --purple-sweep-soft: rgba(124, 58, 237, 0.3);
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+        button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(7, 7, 9, 0.75);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(124, 58, 237, 0.15);
+            transition: var(--transition);
+        }
+        .nav.scrolled { background: rgba(7, 7, 9, 0.97); }
+        .nav-inner {
+            max-width: var(--max-width); margin: 0 auto; padding: 0 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 72px;
+        }
+        .nav-logo {
+            font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700;
+            letter-spacing: -0.02em; color: var(--text-primary);
+        }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a {
+            font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em;
+            text-transform: uppercase; color: var(--text-secondary);
+            transition: var(--transition); position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--accent);
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+        .nav-toggle span {
+            width: 24px; height: 2px; background: var(--text-primary);
+            transition: var(--transition);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            position: relative; overflow: hidden;
+            padding-top: 72px;
+        }
+        .hero-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background:
+                radial-gradient(ellipse 900px 700px at 85% 50%, rgba(124, 58, 237, 0.55), transparent 70%),
+                radial-gradient(ellipse 600px 400px at 75% 20%, rgba(139, 92, 246, 0.35), transparent 70%),
+                radial-gradient(ellipse 400px 600px at 100% 80%, rgba(109, 40, 217, 0.4), transparent 70%),
+                radial-gradient(ellipse 650px 500px at 0% 60%, rgba(6, 182, 212, 0.22), transparent 70%),
+                radial-gradient(ellipse 400px 350px at 10% 90%, rgba(34, 211, 238, 0.14), transparent 65%);
+            pointer-events: none;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(120deg, #070709 25%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-content { position: relative; z-index: 1; padding: 4rem 0; }
+        .hero-eyebrow {
+            font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em;
+            text-transform: uppercase; margin-bottom: 1.5rem;
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            background: linear-gradient(135deg, #22d3ee, #06b6d4);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-eyebrow::before {
+            content: ''; width: 40px; height: 1px;
+            background: linear-gradient(90deg, #06b6d4, #22d3ee);
+            flex-shrink: 0;
+            -webkit-text-fill-color: initial;
+        }
+        .hero-title {
+            font-family: var(--font-serif); font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
+            margin-bottom: 1.5rem; max-width: 800px;
+            background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 45%, #67e8f9 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-title em {
+            font-style: normal;
+            background: var(--gradient-accent-vivid);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem; color: var(--text-secondary); max-width: 580px;
+            margin-bottom: 2.5rem; line-height: 1.8;
+        }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.9rem 2rem; font-size: 0.85rem; font-weight: 600;
+            letter-spacing: 0.05em; text-transform: uppercase;
+            border-radius: 8px; transition: var(--transition);
+        }
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: #fff;
+            box-shadow: 0 4px 24px rgba(139, 92, 246, 0.35);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(139, 92, 246, 0.55); }
+        .btn-outline {
+            border: 1px solid rgba(6, 182, 212, 0.4); color: var(--cyan-bright);
+            backdrop-filter: blur(8px);
+            background: rgba(6, 182, 212, 0.05);
+        }
+        .btn-outline:hover { border-color: var(--cyan); color: #fff; background: rgba(6, 182, 212, 0.15); box-shadow: 0 4px 24px rgba(6, 182, 212, 0.25); }
+        .btn svg { width: 16px; height: 16px; }
+
+        .hero-stats {
+            display: flex; gap: 3rem; margin-top: 4rem; padding-top: 3rem;
+            border-top: 1px solid rgba(6, 182, 212, 0.2);
+        }
+        .hero-stat-number {
+            font-family: var(--font-serif); font-size: 2.2rem;
+            font-weight: 700; line-height: 1;
+            background: var(--gradient-cyber-vivid);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-stat-label {
+            font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            padding: 8rem 0; position: relative;
+            background: #070709;
+            overflow: hidden;
+        }
+        .about::before {
+            content: '';
+            position: absolute; top: -100px; left: -200px;
+            width: 800px; height: 800px;
+            background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.22) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .about::after {
+            content: '';
+            position: absolute; bottom: -150px; right: -100px;
+            width: 600px; height: 600px;
+            background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.18) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .section-label {
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 0.75rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-label::before {
+            content: ''; width: 30px; height: 1px;
+            background: var(--gradient-accent);
+            flex-shrink: 0;
+        }
+        .section-title {
+            font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700; line-height: 1.2; margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .about-text p {
+            color: var(--text-secondary); margin-bottom: 1.25rem;
+            font-size: 1.05rem; line-height: 1.8;
+        }
+        .about-skills { display: flex; flex-direction: column; gap: 1.5rem; }
+        .skill-group h3 {
+            font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em;
+            text-transform: uppercase; margin-bottom: 0.75rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .skill-tag {
+            padding: 0.4rem 0.85rem; font-size: 0.78rem; font-weight: 500;
+            background: rgba(139, 92, 246, 0.06); border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 100px; color: var(--text-secondary);
+            transition: var(--transition);
+        }
+        .skill-tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(139, 92, 246, 0.12); }
+
+        /* ===== EXPERIENCE TIMELINE ===== */
+        .experience { display: flex; flex-direction: column; gap: 1rem; margin-top: 3rem; }
+        .exp-item {
+            display: flex; gap: 1.5rem; padding: 1.25rem 1.5rem;
+            background: #111115;
+            border: 1px solid rgba(124, 58, 237, 0.15);
+            border-radius: 8px; transition: var(--transition);
+        }
+        .exp-item:hover { border-color: rgba(124, 58, 237, 0.45); box-shadow: 0 4px 24px rgba(124, 58, 237, 0.15); }
+        .exp-date { font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; min-width: 90px; padding-top: 2px; }
+        .exp-role { font-weight: 600; font-size: 0.95rem; }
+        .exp-company { font-size: 0.85rem; color: var(--cyan); }
+        .exp-desc { font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.3rem; }
+
+        /* ===== PORTFOLIO ===== */
+        .portfolio {
+            padding: 8rem 0;
+            background: #070709;
+            position: relative;
+            overflow: hidden;
+        }
+        .portfolio::before {
+            content: '';
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 65%;
+            background: linear-gradient(to top, rgba(109, 40, 217, 0.4) 0%, rgba(6, 182, 212, 0.15) 50%, transparent 100%);
+            pointer-events: none;
+        }
+        .portfolio::after {
+            content: '';
+            position: absolute; bottom: -100px; left: 50%;
+            transform: translateX(-50%);
+            width: 1400px; height: 650px;
+            background: radial-gradient(ellipse at 40% bottom, rgba(124, 58, 237, 0.35) 0%, transparent 50%),
+                        radial-gradient(ellipse at 65% bottom, rgba(6, 182, 212, 0.25) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .portfolio-header {
+            display: flex; justify-content: space-between; align-items: flex-end;
+            margin-bottom: 3rem; flex-wrap: wrap; gap: 1.5rem;
+        }
+        .filter-bar {
+            display: flex; flex-wrap: wrap; gap: 0.5rem;
+        }
+        .filter-btn {
+            padding: 0.5rem 1.25rem; font-size: 0.78rem; font-weight: 500;
+            letter-spacing: 0.03em; color: var(--text-secondary);
+            background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 100px; transition: var(--transition);
+        }
+        .filter-btn:hover { border-color: rgba(139, 92, 246, 0.4); color: var(--text-primary); }
+        .filter-btn.active {
+            background: var(--gradient-accent); color: #fff;
+            border-color: transparent; font-weight: 600;
+            box-shadow: 0 4px 16px rgba(139, 92, 246, 0.35);
+        }
+
+        .portfolio-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* ===== CASE STUDY CARD ===== */
+        .case-card {
+            background: #111115;
+            border: 1px solid rgba(124, 58, 237, 0.18);
+            border-radius: 16px; overflow: hidden;
+            transition: var(--transition); cursor: pointer; position: relative;
+        }
+        .case-card:hover {
+            border-color: rgba(124, 58, 237, 0.55);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6), 0 0 50px rgba(124, 58, 237, 0.25);
+        }
+        .case-card-thumb {
+            width: 100%; aspect-ratio: 16/10; background: var(--bg-secondary);
+            position: relative; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .case-card-thumb-placeholder {
+            font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.1em; text-align: center; padding: 1rem;
+        }
+        .case-card-thumb img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .case-card:hover .case-card-thumb img { transform: scale(1.05); }
+        .case-card-body { padding: 1.5rem; }
+        .case-card-tags { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+        .case-card-tag {
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em;
+            text-transform: uppercase; color: #a78bfa; padding: 0.25rem 0.6rem;
+            background: rgba(139, 92, 246, 0.12); border-radius: 4px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        .case-card-title {
+            font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700;
+            margin-bottom: 0.5rem; line-height: 1.3;
+        }
+        .case-card-excerpt {
+            font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .case-card-meta {
+            display: flex; justify-content: space-between; align-items: center;
+            padding-top: 1rem; border-top: 1px solid var(--border);
+        }
+        .case-card-company { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
+        .case-card-arrow {
+            width: 32px; height: 32px; border-radius: 50%;
+            background: rgba(139, 92, 246, 0.1); display: flex;
+            align-items: center; justify-content: center;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            transition: var(--transition);
+        }
+        .case-card:hover .case-card-arrow { background: var(--gradient-accent); border-color: transparent; }
+        .case-card-arrow svg { width: 14px; height: 14px; color: var(--accent); transition: var(--transition); }
+        .case-card:hover .case-card-arrow svg { color: #fff; }
+
+        /* ===== MODAL (CASE STUDY DETAIL) ===== */
+        .modal-overlay {
+            position: fixed; inset: 0; z-index: 2000;
+            background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
+            display: none; align-items: flex-start; justify-content: center;
+            padding: 2rem; overflow-y: auto;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: #111115;
+            border: 1px solid rgba(124, 58, 237, 0.25);
+            border-radius: 16px; max-width: 860px; width: 100%;
+            margin: 3rem auto; position: relative;
+            animation: modalIn 0.3s ease;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), 0 0 80px rgba(124, 58, 237, 0.18);
+        }
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal-close {
+            position: absolute; top: 1.25rem; right: 1.25rem; z-index: 10;
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--bg-card); border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary); transition: var(--transition);
+        }
+        .modal-close:hover { background: var(--gradient-accent); color: #fff; border-color: transparent; }
+        .modal-hero-img {
+            width: 100%; aspect-ratio: 16/8; background: var(--bg-card);
+            border-radius: 16px 16px 0 0; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .modal-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-content { padding: 2.5rem; }
+        .modal-tags { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .modal-tag {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+            text-transform: uppercase; color: var(--accent); padding: 0.3rem 0.75rem;
+            background: var(--accent-dim); border-radius: 4px;
+        }
+        .modal-title {
+            font-family: var(--font-serif); font-size: 2rem; font-weight: 700;
+            margin-bottom: 0.5rem; line-height: 1.25;
+        }
+        .modal-company { color: var(--accent); font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem; }
+        .modal-section { margin-bottom: 2rem; }
+        .modal-section-title {
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--cyan); margin-bottom: 0.75rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .modal-section-title::before {
+            content: ''; width: 16px; height: 1px; background: var(--cyan);
+        }
+        .modal-section p, .modal-section ul {
+            color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8;
+        }
+        .modal-section ul { padding-left: 1.25rem; }
+        .modal-section li { margin-bottom: 0.4rem; }
+        .modal-gallery {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;
+        }
+        .modal-gallery-item {
+            aspect-ratio: 16/10; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .modal-gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .modal-gallery-placeholder {
+            font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;
+        }
+        .modal-impact {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem; margin-top: 1rem;
+        }
+        .modal-impact-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; padding: 1.25rem; text-align: center;
+        }
+        .modal-impact-number {
+            font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700;
+            background: var(--gradient-cyber-vivid);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; line-height: 1;
+        }
+        .modal-impact-label {
+            font-size: 0.72rem; color: var(--text-muted); margin-top: 0.3rem;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .modal-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            padding: 9rem 0 8rem; text-align: center;
+            background: #070709;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Strong dual-colour glow behind content */
+        .contact::before {
+            content: '';
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1100px; height: 700px;
+            background:
+                radial-gradient(ellipse at 35% 50%, rgba(124, 58, 237, 0.55) 0%, transparent 55%),
+                radial-gradient(ellipse at 68% 50%, rgba(6, 182, 212, 0.45) 0%, transparent 55%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        /* Ensure all content sits above the glow */
+        .contact .container { position: relative; z-index: 1; }
+
+        .contact-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.6rem, 5vw, 4.2rem);
+            font-weight: 700; margin-bottom: 1.25rem;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 60px rgba(124, 58, 237, 0.4), 0 0 120px rgba(6, 182, 212, 0.2);
+        }
+        .contact-subtitle {
+            color: #b0b0c8; font-size: 1.1rem; margin-bottom: 3rem;
+            max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.75;
+        }
+        .contact-links { display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap; }
+
+        /* Email Me — solid cyan */
+        .contact-link-email {
+            display: inline-flex; align-items: center; gap: 0.65rem;
+            padding: 1rem 2.25rem;
+            background: var(--cyan);
+            border: none; border-radius: 10px;
+            color: #000; font-size: 0.9rem; font-weight: 700;
+            letter-spacing: 0.04em; text-transform: uppercase;
+            transition: var(--transition);
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 4px 20px rgba(6, 182, 212, 0.3);
+        }
+        .contact-link-email:hover {
+            transform: translateY(-3px);
+            background: var(--cyan-bright);
+            box-shadow: 0 0 50px rgba(6, 182, 212, 0.7), 0 8px 32px rgba(6, 182, 212, 0.4);
+        }
+
+        /* Behance & LinkedIn — solid purple gradient */
+        .contact-link {
+            display: inline-flex; align-items: center; gap: 0.65rem;
+            padding: 1rem 2.25rem;
+            background: var(--gradient-accent);
+            border: none; border-radius: 10px;
+            color: #fff; font-size: 0.9rem; font-weight: 700;
+            letter-spacing: 0.04em; text-transform: uppercase;
+            transition: var(--transition);
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.45), 0 4px 20px rgba(124, 58, 237, 0.25);
+        }
+        .contact-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 50px rgba(124, 58, 237, 0.65), 0 8px 32px rgba(124, 58, 237, 0.4);
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+        .contact-link svg { width: 18px; height: 18px; }
+        .contact-link-email svg { width: 18px; height: 18px; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 2rem 0; text-align: center;
+            border-top: 1px solid transparent;
+            border-image: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.3), rgba(6, 182, 212, 0.3), transparent) 1;
+        }
+        .footer p { font-size: 0.78rem; color: var(--text-muted); }
+
+        /* ===== SCROLL ANIMATION ===== */
+        .reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--bg-primary); border-bottom: 1px solid var(--border); flex-direction: column; padding: 1.5rem 2rem; gap: 1.25rem; }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: flex; }
+            .hero-stats { flex-wrap: wrap; gap: 2rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .modal-content { padding: 1.5rem; }
+            .modal-gallery { grid-template-columns: 1fr; }
+            .filter-bar { gap: 0.4rem; }
+            .filter-btn { padding: 0.4rem 0.9rem; font-size: 0.72rem; }
+            .portfolio-header { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">SG<span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://www.behance.net/srishtigupta16" target="_blank">Behance</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-eyebrow">AI-Native Marketing Generalist</div>
+            <h1 class="hero-title">Scaling Brands at the Intersection of Strategy, MarTech, and Storytelling.</h1>
+            <p class="hero-subtitle">
+                I connect brand strategy, AI-powered content, and full-funnel execution into a single, scalable practice. For enterprise brands that need someone who can see the full picture and build the infrastructure to move it.
+            </p>
+            <div class="hero-ctas">
+                <a href="#portfolio" class="btn btn-primary">
+                    View My Work
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+            <div class="hero-stats">
+                <div>
+                    <div class="hero-stat-number">100+</div>
+                    <div class="hero-stat-label">SEO Blogs Published</div>
+                </div>
+                <div>
+                    <div class="hero-stat-number">7+</div>
+                    <div class="hero-stat-label">Brands Built &amp; Managed</div>
+                </div>
+                <div>
+                    <div class="hero-stat-number">3+</div>
+                    <div class="hero-stat-label">Years in Content &amp; Branding</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="section-label">About Me</div>
+        <div class="about-grid">
+            <div class="about-text">
+                <h2 class="section-title">Bridging the gap between high-impact storytelling and data-driven growth.</h2>
+                <p>
+                    I'm Srishti Gupta, a B2B Marketing Generalist who believes that a great narrative is only as good as the system supporting it. From building multi-channel outbound campaigns at TrueBlue Advisory to supporting PR for cybersecurity giants at Adfactors PR, I've spent my career ensuring that creative ideas are backed by rigorous data hygiene and performance analytics.
+                </p>
+                <p>
+                    Advancing my expertise through IIT Roorkee's AI-Enabled MarTech certification, where I'm focused on leveraging automation to replace campaign complexity with data-driven, high-performance systems.
+                </p>
+
+                <!-- Experience Timeline -->
+                <div class="experience">
+                    <div class="exp-item">
+                        <div class="exp-date">2024 – Now</div>
+                        <div>
+                            <div class="exp-role">Account Manager</div>
+                            <div class="exp-company">TrueBlue Advisory</div>
+                            <div class="exp-desc">Leading employer branding mandates, content plans, and integrated campaigns across LinkedIn, microsites, and internal channels.</div>
+                        </div>
+                    </div>
+                    <div class="exp-item">
+                        <div class="exp-date">2023 – 2024</div>
+                        <div>
+                            <div class="exp-role">Brand Communications Specialist</div>
+                            <div class="exp-company">Startup Sherpas</div>
+                            <div class="exp-desc">Grew LinkedIn through end-to-end content strategy and execution. Created brand guidelines and thought-leadership content.</div>
+                        </div>
+                    </div>
+                    <div class="exp-item">
+                        <div class="exp-date">2022 – 2023</div>
+                        <div>
+                            <div class="exp-role">SEO & Content Marketing Intern</div>
+                            <div class="exp-company">Supertails</div>
+                            <div class="exp-desc">Produced 100+ SEO blogs, boosted domain authority, and earned Google featured snippet placements.</div>
+                        </div>
+                    </div>
+                    <!-- PLACEHOLDER: Add more experience items as needed -->
+                </div>
+            </div>
+
+            <div class="about-skills">
+                <div class="skill-group">
+                    <h3>Strategy & Planning</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Brand Strategy</span>
+                        <span class="skill-tag">Employer Branding</span>
+                        <span class="skill-tag">Content Strategy</span>
+                        <span class="skill-tag">Campaign Planning</span>
+                        <span class="skill-tag">SEO Strategy</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Content & Communication</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SEO Writing</span>
+                        <span class="skill-tag">Blog Content</span>
+                        <span class="skill-tag">LinkedIn Strategy</span>
+                        <span class="skill-tag">Thought Leadership</span>
+                        <span class="skill-tag">Brand Guidelines</span>
+                        <span class="skill-tag">Copywriting</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Creative & Design</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Adobe Illustrator</span>
+                        <span class="skill-tag">Procreate</span>
+                        <span class="skill-tag">Presentation Design</span>
+                        <span class="skill-tag">Social Media Design</span>
+                        <span class="skill-tag">Visual Storytelling</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Execution & Management</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Account Management</span>
+                        <span class="skill-tag">Client Communication</span>
+                        <span class="skill-tag">Cross-functional Leadership</span>
+                        <span class="skill-tag">Project Orchestration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PORTFOLIO ===== -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="portfolio-header">
+            <div>
+                <div class="section-label">Selected Work</div>
+                <h2 class="section-title">Strategy in Action.</h2>
+            </div>
+            <div class="filter-bar" id="filterBar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="strategy">Strategy & Employer Branding</button>
+                <button class="filter-btn" data-filter="seo">SEO & Content</button>
+                <button class="filter-btn" data-filter="brand-comm">Brand Communications</button>
+                <button class="filter-btn" data-filter="creative">Creative & Design</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+                <button class="filter-btn" data-filter="freelance">Freelance</button>
+            </div>
+        </div>
+
+        <div class="portfolio-grid" id="portfolioGrid">
+            <!-- Cards are injected via JS from the CASE_STUDIES data below -->
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-label" style="justify-content:center;">Let's Connect</div>
+        <h2 class="contact-title">Got a project? Let's talk.</h2>
+        <p class="contact-subtitle">Whether you're looking to fix a leaking pipeline, architect a new brand narrative, or explore the future of AI-driven marketing, let's connect and build something measurable and truly remarkable.</p>
+        <div class="contact-links">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=guptasrishti849@gmail.com" target="_blank" class="contact-link-email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Email Me
+            </a>
+            <a href="https://www.behance.net/srishtigupta16" target="_blank" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
+                Behance
+            </a>
+            <a href="https://www.linkedin.com/in/srishti-gupta-715938182/" target="_blank" class="contact-link">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <!-- PLACEHOLDER: Add your LinkedIn URL above. Replace the # with your actual profile link. -->
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 Srishti Gupta. All rights reserved. Built with purpose.</p>
+    </div>
+</footer>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+        <button class="modal-close" id="modalClose">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="modal-hero-img" id="modalHeroImg">
+            <div class="modal-gallery-placeholder">Cover Image Placeholder</div>
+        </div>
+        <div class="modal-content" id="modalContent">
+            <!-- Injected dynamically -->
+        </div>
+    </div>
+</div>
+
+<script>
+// ===================================================================
+// CASE STUDIES DATA — EDIT THIS SECTION TO ADD/MODIFY YOUR WORK
+// ===================================================================
+// Each case study object defines one portfolio card + its detail modal.
+// To add a new project, copy one block and fill in your details.
+// For images: replace "thumb" and "cover" with real image URLs or paths.
+//
+// CATEGORIES (used for filtering):
+//   "strategy"    → Strategy & Employer Branding
+//   "seo"         → SEO & Content Writing
+//   "brand-comm"  → Brand Communications
+//   "creative"    → Creative & Design
+//   "social"      → Social Media
+//   "freelance"   → Freelance Work
+// ===================================================================
+
+const CASE_STUDIES = [
+
+    // ═══════════════════════════════════════════════════════════════
+    // STRATEGY & EMPLOYER BRANDING — TrueBlue Advisory Client Work
+    // ═══════════════════════════════════════════════════════════════
+
+    {
+        id: "coindcx-employer-branding",
+        category: "strategy",
+        tags: ["Employer Branding", "Omnichannel", "Culture Narrative"],
+        title: "CoinDCX — Employer Brand Transformation",
+        excerpt: "Led an integrated employer branding strategy for India's leading crypto platform — repositioning their EVP and conceptualizing a culture timeline microsite to attract elite Tech and Web3 talent.",
+        company: "TrueBlue Advisory × CoinDCX",
+        thumb: "assets/coindcx-logo.jpg",
+        cover: "assets/coindcx-logo.jpg",
+        challenge: "CoinDCX sought to become the employer of choice for elite Tech and Web3 talent, requiring a shift from being viewed as a 'crypto exchange' to a premier 'technology hub.' Key issues included intense talent competition against global tech giants, visibility gaps in their Employee Value Proposition (EVP), internal disconnect in employee pride due to the volatile crypto industry, and low referral rates from existing staff.",
+        approach: "Developed an integrated employer branding strategy highlighting CoinDCX's unique culture and technological scale. This included omnichannel management across LinkedIn and Instagram ('Life at CoinDCX'), owning the internal ecosystem via Slack communications, designing targeted employer branding campaigns around the tech-first EVP, and ideating physical in-office activations to boost morale. A key deliverable was conceptualizing a narrative-led culture timeline microsite — walking prospective hires through CoinDCX's evolution from founding moments to present, combining storytelling, visual design direction, and content strategy into a destination page that doubles as a recruitment tool.",
+        impact: [
+            { number: "Multi", label: "Channel Campaign" },
+            { number: "EVP", label: "Repositioned" },
+            { number: "1", label: "Culture Microsite Concept" }
+        ],
+        gallery: [
+            "assets/coindcx-1.jpg",
+            "assets/coindcx-2.jpg",
+            "assets/coindcx-3.jpg",
+            "assets/coindcx-4.jpg",
+            "assets/coindcx-5.jpg",
+            "assets/coindcx-6.jpg",
+            "assets/coindcx-7.jpg"
+        ],
+        links: [
+            { label: "View Full Case Study", url: "https://docs.google.com/presentation/d/1QfJPphQyMt-dX7ZVoRCqhYhWv36o-aZ9BoB4NE7WzKQ/edit?usp=sharing" },
+            { label: "View Strategy Deck on Behance", url: "https://www.behance.net/gallery/233739041/Strategy-Pitch-Deck-2" }
+        ]
+    },
+    {
+        id: "wissen-employer-brand",
+        category: "strategy",
+        tags: ["Employer Branding", "EVP", "Leadership Branding"],
+        title: "Wissen Infotech — Employer Brand & Leadership Strategy",
+        excerpt: "Crafted a comprehensive Employer Value Proposition (EVP 2025) for Wissen Infotech — including a leadership branding strategy deck to position their senior leaders as thought leaders on LinkedIn.",
+        company: "TrueBlue Advisory × Wissen Infotech",
+        thumb: "assets/wissen-logo.jpg",
+        cover: "assets/wissen-logo.jpg",
+        challenge: "Wissen Infotech sought to revamp its employer positioning to enhance its reputation and effectively showcase its unique Employer Value Proposition (EVP) to top-tier tech talent. Key challenges included a reputation alignment gap between internal employee experience and external brand perception, difficulty standing out as an employer of choice in a highly competitive tech landscape, a lack of authentic people-centric storytelling to showcase the 'Life at Wissen' culture, and the need for a structured approach to manage and respond to employee feedback on public review platforms like Glassdoor and AmbitionBox.",
+        approach: "Defined and amplified an authentic EVP that humanizes the brand through people-first narratives and strategic reputation management. Conducted FGDs and leadership interviews to synthesize findings into a core EVP positioning statement. Curated people-centric social media content highlighting internal culture, team stories (#LeadersOfWissen, Life at Wissen series), and professional growth opportunities. Monitored and managed reviews on Glassdoor and AmbitionBox, providing strategic responses and flagging gap areas for improvement. Developed internal communications frameworks to bridge leadership and workforce, fostering a culture of transparency and pride.",
+        impact: [
+            { number: "EVP", label: "2025 Positioned" },
+            { number: "ORM", label: "Glassdoor & AmbitionBox" },
+            { number: "Full", label: "Internal Comms Framework" }
+        ],
+        gallery: [
+            "assets/wissen-1.jpg",
+            "assets/wissen-2.jpg"
+        ],
+        links: [
+            { label: "View Full Case Study", url: "https://docs.google.com/presentation/d/1QfJPphQyMt-dX7ZVoRCqhYhWv36o-aZ9BoB4NE7WzKQ/edit?usp=sharing" },
+            { label: "View on Behance", url: "https://www.behance.net/gallery/183519605/Apparel-brand-and-Advertisement-Concept-Design" }
+        ]
+    },
+    {
+        id: "maersk-employer-branding",
+        category: "strategy",
+        tags: ["Employer Branding", "Global Brand"],
+        title: "Maersk — Employer Branding & Content Strategy",
+        excerpt: "Managed the employer branding mandate for Maersk, a global shipping and logistics leader — developing content strategy and social media campaigns to position Maersk as a top employer in India.",
+        company: "TrueBlue Advisory × Maersk",
+        thumb: "assets/maersk-logo.png",
+        cover: "assets/maersk-logo.png",
+        challenge: "Global logistics leader Maersk needed to strengthen its employer brand across diverse talent segments in India — from tech professionals and supply chain specialists to young graduates and women in logistics. The challenge was to create local resonance for a global brand while communicating Maersk's distinct culture and career opportunities across varied audiences and geographies.",
+        approach: "Executed a full-spectrum employer branding mandate across multiple campaigns and initiatives: Code Cargo hackathon event branding to attract tech talent, Tech Series 2025 AI event in partnership with NASSCOM, YES Learnership programme targeting young logistics talent, Summer Interns 2025 campaign featuring employee story content, GROW programme championing women in logistics, APM Terminals Pipavav employer narrative, Vietnam recruitment advertising, and global brand asset development. Managed LinkedIn content calendar with a strategic mix of employer stories, event activations, and milestone content.",
+        impact: [
+            { number: "6+", label: "Campaigns Executed" },
+            { number: "Multi", label: "Geography Reach" },
+            { number: "Global", label: "Brand Localised" }
+        ],
+        gallery: [
+            "assets/maersk-0.jpg",
+            "assets/maersk-1.jpg",
+            "assets/maersk-2.jpg",
+            "assets/maersk-3.jpg",
+            "assets/maersk-4.jpg",
+            "assets/maersk-5.jpg"
+        ],
+        links: [
+            { label: "View Full Case Study", url: "https://docs.google.com/presentation/d/1QfJPphQyMt-dX7ZVoRCqhYhWv36o-aZ9BoB4NE7WzKQ/edit?usp=sharing" }
+        ]
+    },
+    {
+        id: "exl-services",
+        category: "strategy",
+        tags: ["Employer Branding", "Tech Services"],
+        title: "EXL Services — Employer Brand Strategy",
+        excerpt: "Developed and executed employer branding strategy for EXL Services, a global analytics and digital operations company — from content planning to campaign delivery.",
+        company: "TrueBlue Advisory × EXL Services",
+        thumb: "assets/exl-logo.png",
+        cover: "assets/exl-logo.png",
+        challenge: "EXL needed to position itself as a workplace for the future-minded professional — one that embraces innovation, continuous learning, and digital transformation. The employer branding challenge was to make EXL's internal culture of innovation visible and tangible to the outside world, translating a large analytics and digital operations company's values into compelling employer narratives that could attract tech-forward talent.",
+        approach: "Developed and executed the 'Innovation at Speed' internal and employer brand campaign — a fully integrated content suite including newsletter design, Fail Fast Learn Faster emailer series championing a culture of experimentation, AI product launch assets, STEM Day event content, and high-production AV/video assets. The campaign translated EXL's internal culture into external brand proof points — positioning EXL as an employer that moves at the speed of its ambitions and invests in its people's growth.",
+        impact: [
+            { number: "Full", label: "Campaign Suite" },
+            { number: "Multi", label: "Channel Activation" },
+            { number: "Innovation", label: "Culture Positioned" }
+        ],
+        gallery: [
+            "assets/exl-1.jpg",
+            "assets/exl-2.jpg",
+            "assets/exl-3.jpg"
+        ],
+        links: [
+            { label: "View Full Case Study", url: "https://docs.google.com/presentation/d/1QfJPphQyMt-dX7ZVoRCqhYhWv36o-aZ9BoB4NE7WzKQ/edit?usp=sharing" }
+        ]
+    },
+    {
+        id: "kohler-brand",
+        category: "strategy",
+        tags: ["Employer Branding", "Premium Brand"],
+        title: "Kohler — Employer Brand & Content",
+        excerpt: "Led the employer branding engagement for Kohler, a globally renowned kitchen and bath brand — building their employer narrative for the Indian market.",
+        company: "TrueBlue Advisory × Kohler",
+        thumb: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiB2aWV3Qm94PSIwIDAgODAwIDQ1MCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0NTAiIGZpbGw9IiMxYTFhMWEiIHJ4PSI4IiByeT0iOCIvPgogIAogIDx0ZXh0IHg9IjQwMCIgeT0iMjIwIiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iOTAiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIyIj5LT0hMRVI8L3RleHQ+Cgo8L3N2Zz4=",
+        cover: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiB2aWV3Qm94PSIwIDAgODAwIDQ1MCI+CiAgPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0NTAiIGZpbGw9IiMxYTFhMWEiIHJ4PSI4IiByeT0iOCIvPgogIAogIDx0ZXh0IHg9IjQwMCIgeT0iMjIwIiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iOTAiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIyIj5LT0hMRVI8L3RleHQ+Cgo8L3N2Zz4=",
+        challenge: "Kohler aimed to strengthen its employer brand within the industrial and manufacturing sectors, specifically spotlighting the workforce driving their factory excellence. Key challenges included shifting the narrative toward manufacturing and 'blue-collar' employees to humanize the workforce behind the products, capturing authentic 'on-the-ground' culture and long-term career growth in a factory setting, showcasing Kohler's commitment to DE&I for specially-abled employees, and fostering deep organizational pride and belonging among frontline associates across diverse manufacturing locations.",
+        approach: "Developed a high-impact, visual-first narrative centered on the theme 'I Love Kohler' to celebrate industrial excellence and workforce diversity. Conceptualized and executed the 'My Kohler Story' and 'Why I Joined & Why I Stayed' signature campaigns featuring real industrial talent. Produced a comprehensive visual content suite including EVP films, plant-specific CSR videos, high-production features, and PwD testimonials for DE&I showcasing. Curated carousels and posts capturing year-long engagement activities and managed a structured multi-channel content calendar across LinkedIn and internal platforms.",
+        impact: [
+            { number: "EVP", label: "Film Produced" },
+            { number: "DE&I", label: "PwD Stories Showcased" },
+            { number: "Multi", label: "Plant Campaigns" }
+        ],
+        gallery: [
+            "assets/kohler-1.jpg",
+            "assets/kohler-2.jpg"
+        ],
+        links: [
+            { label: "View Full Case Study", url: "https://docs.google.com/presentation/d/1QfJPphQyMt-dX7ZVoRCqhYhWv36o-aZ9BoB4NE7WzKQ/edit?usp=sharing" }
+        ]
+    },
+    {
+        id: "sun-pharma-brand",
+        category: "strategy",
+        tags: ["Employer Branding", "Pharma"],
+        title: "Sun Pharma — Employer Brand Strategy",
+        excerpt: "Developed employer branding strategy for Sun Pharma, one of the world's largest specialty generic pharmaceutical companies.",
+        company: "TrueBlue Advisory × Sun Pharma",
+        thumb: "assets/sunpharma-logo.jpg",
+        cover: "assets/sunpharma-logo.jpg",
+        challenge: "<!-- PLACEHOLDER: What was Sun Pharma's employer branding challenge? -->",
+        approach: "<!-- PLACEHOLDER: Describe the approach and execution. -->",
+        impact: [
+            { number: "—", label: "Add metric" },
+            { number: "—", label: "Add metric" }
+        ],
+        gallery: ["https://mir-s3-cdn-cf.behance.net/projects/404/e9480d233738433.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png"],
+        links: [
+            { label: "View Full Case Study", url: "https://docs.google.com/presentation/d/1QfJPphQyMt-dX7ZVoRCqhYhWv36o-aZ9BoB4NE7WzKQ/edit?usp=sharing" }
+        ]
+    },
+
+    // ═══════════════════════════════════════════════════════════════
+    // SEO & CONTENT WRITING
+    // ═══════════════════════════════════════════════════════════════
+
+    {
+        id: "supertails-seo",
+        category: "seo",
+        tags: ["SEO", "Content Marketing"],
+        title: "100+ SEO Blogs — Supertails",
+        excerpt: "Researched longtail keywords and wrote SEO-optimized blog content that ranked #1 on Google and earned featured snippet placements in the pet care space.",
+        company: "Supertails",
+        thumb: "assets/supertails-logo.png",
+        cover: "assets/supertails-logo.png",
+        challenge: "Supertails needed to increase organic search visibility and domain authority in the competitive pet care space. The content team was small and needed high-volume, high-quality blog output covering everything from pet nutrition to breed-specific care.",
+        approach: "Conducted keyword research targeting longtail queries with high intent and low competition. Wrote 100+ blogs covering topics like managing multiple cats at home, scabies in dogs, cat ear mites, cat fever, hairballs, cat shampoos, and caring for pregnant dogs — each optimized for on-page SEO with structured headings, internal linking, and meta descriptions.",
+        impact: [
+            { number: "100+", label: "Blogs Published" },
+            { number: "#1", label: "SERP Rankings" },
+            { number: "Featured", label: "Google Snippets" }
+        ],
+        gallery: ["https://mir-s3-cdn-cf.behance.net/projects/404/116f98155079733.Y3JvcCwxMjQyLDk3MSwwLDM5MA.jpg"],
+        links: [
+            { label: "View Blog Samples", url: "https://drive.google.com/drive/folders/1ChiTjJERrtXes_VqjVIBLHtV6FNv-r8g" }
+        ]
+    },
+    // ═══════════════════════════════════════════════════════════════
+    // BRAND COMMUNICATIONS — Startup Sherpas
+    // ═══════════════════════════════════════════════════════════════
+
+    {
+        id: "startup-sherpas-brand",
+        category: "brand-comm",
+        tags: ["Brand Guidelines", "Content Strategy", "LinkedIn Growth"],
+        title: "Brand Identity & LinkedIn Engine — Startup Sherpas",
+        excerpt: "Built Startup Sherpas' brand from the ground up — designing their complete brand guidelines, then creating an end-to-end LinkedIn content strategy including the SUGAR Cosmetics case study carousel.",
+        company: "Startup Sherpas",
+        thumb: "https://mir-s3-cdn-cf.behance.net/projects/404/d3ecfc186388187.Y3JvcCwyNzY4LDIxNjUsMCw2Nzg.png",
+        cover: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/433830186388187.661cca35e28b5.png",
+        challenge: "Startup Sherpas needed two things simultaneously: a consistent, professional visual and verbal identity as they scaled, and a LinkedIn content engine that positioned them as credible startup ecosystem advisors to attract founders and investors.",
+        approach: "First built the brand foundation — audited existing touchpoints, defined the core visual identity system (logo, colors, typography), established tone of voice guidelines, and compiled a comprehensive brand guideline document. Then built the LinkedIn content strategy from scratch — defined content pillars (startup ecosystem insights, founder stories, case studies), created a posting cadence, wrote thought-leadership posts, and designed LinkedIn carousels including the SUGAR Cosmetics brand case study — managing the entire publishing workflow end-to-end.",
+        impact: [
+            { number: "Full", label: "Brand System" },
+            { number: "End-to-end", label: "LinkedIn Engine" },
+            { number: "54", label: "Behance Views" }
+        ],
+        gallery: ["https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/c11ee0186388187.661cca35e2215.png", "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/aaef89186388187.661cca35e31b8.png", "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/1cb669196223923.661ccd2b45dac.png", "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/8eea93196223923.661ccd2b47a91.png"],
+        links: [
+            { label: "View LinkedIn Carousels on Behance", url: "https://www.behance.net/gallery/186388187/Startup-Sherpas-LinkedIn-Case-Study-Carousels" },
+            { label: "View Brand Guidelines on Behance", url: "https://www.behance.net/gallery/196223923/Brand-Design-Projects" }
+        ]
+    },
+
+    // ═══════════════════════════════════════════════════════════════
+    // CREATIVE & DESIGN
+    // ═══════════════════════════════════════════════════════════════
+
+    {
+        id: "brewd-coffeehouse",
+        category: "creative",
+        tags: ["Brand Design", "Café Branding", "Visual Identity"],
+        title: "Brewd Coffeehouse — Brand Design",
+        excerpt: "Designed the complete visual identity for Brewd Coffeehouse — a warm, artisanal café brand built around the ritual of slow coffee and intentional moments.",
+        company: "Brand Design Project",
+        thumb: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/171ca2196223923.661cc6e241702.png",
+        cover: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/171ca2196223923.661cc6e241702.png",
+        challenge: "Brewd needed a brand identity that captured the essence of a specialty coffeehouse — distinct from generic café aesthetics, and warm enough to make every customer feel like a regular.",
+        approach: "Developed the full brand design system including logo, color palette, typography, packaging directions, and brand communication touchpoints — ensuring every visual element reflected the deliberate, craft-first ethos of a coffeehouse that takes its coffee seriously.",
+        impact: [
+            { number: "Full", label: "Brand System" },
+            { number: "Visual", label: "Identity Built" }
+        ],
+        gallery: ["https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/955f15196223923.661cc6e241080.png", "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/f3b961196223923.661cc6e2420f9.png", "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/53552b196223923.661cc6e241be9.png"],
+        links: [
+            { label: "View on Behance", url: "https://www.behance.net/gallery/196223923/Brand-Design-Projects" }
+        ]
+    },
+    {
+        id: "nurvi-brand",
+        category: "creative",
+        tags: ["Branding", "Concept to Communication"],
+        title: "Nurvi — Unisex Underwear Brand",
+        excerpt: "Built a complete unisex underwear brand from scratch — from concept development and naming to visual identity, packaging, and campaign communication assets.",
+        company: "Academic Project",
+        thumb: "assets/nurvi-thumb.png",
+        cover: "assets/nurvi-thumb.png",
+        challenge: "Tasked with creating a brand from the ground up — the brief was to develop a unisex underwear brand that challenged conventional gendered marketing in the intimates category.",
+        approach: "Developed the brand concept 'Nurvi' through market research, defined target audience and positioning, created the brand name, visual identity, packaging concepts, and full communication assets including ad campaigns and social media mockups.",
+        impact: [
+            { number: "Full", label: "Brand System" },
+            { number: "Concept →", label: "Communication" }
+        ],
+        gallery: ["https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/19c550183519605.65413ec3623c9.png", "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/2ec4b3183519605.65413ec360d08.png", "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/c0cdbe183519605.65413ec35f2b5.png", "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/79690f183519605.65413ec35ff86.png", "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/ad7e22183519605.65413ec3618c1.png", "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/ff57ad183519605.65413ec35e225.png"],
+        links: [
+            { label: "View on Behance", url: "https://www.behance.net/srishtigupta16" }
+        ]
+    },
+    {
+        id: "digital-illustrations",
+        category: "creative",
+        tags: ["Illustration", "Digital Art"],
+        title: "Digital Art — Procreate & Illustrator",
+        excerpt: "A curated collection of digital illustrations, doodles, pet portraits, and zentangle art created on Procreate and Adobe Illustrator — showcasing range from fine detail to expressive freeform.",
+        company: "Personal Work",
+        thumb: "https://mir-s3-cdn-cf.behance.net/projects/404/84260d181410599.Y3JvcCwxNDAwLDEwOTUsMCw4MzE.png",
+        cover: "https://mir-s3-cdn-cf.behance.net/projects/404/84260d181410599.Y3JvcCwxNDAwLDEwOTUsMCw4MzE.png",
+        challenge: "Personal creative exploration — developing a distinctive visual style across multiple digital art techniques and tools.",
+        approach: "Created a diverse body of work spanning digital portraits, butterfly illustrations, pet portraits (including a golden retriever piece), zentangle-style doodles, floral compositions, and character illustrations. Each piece explores a different technique — from clean vector work in Illustrator to textured brushwork in Procreate.",
+        impact: [
+            { number: "5+", label: "Behance Projects" },
+            { number: "Multi", label: "Techniques" }
+        ],
+        gallery: ["https://mir-s3-cdn-cf.behance.net/projects/404/c64707181411587.651bdc9630744.jpg", "https://mir-s3-cdn-cf.behance.net/projects/404/b5d54b154292889.Y3JvcCwxMjAwLDkzOCwwLDMyMw.jpg", "https://mir-s3-cdn-cf.behance.net/projects/404/527684131233647.Y3JvcCwzMzc3LDI2NDEsMCw1MTg.png", "https://mir-s3-cdn-cf.behance.net/projects/404/862277154315097.Y3JvcCwyNjc0LDIwOTEsMCw2NDg.png"],
+        links: [
+            { label: "View on Behance", url: "https://www.behance.net/srishtigupta16" }
+        ]
+    },
+
+    // ═══════════════════════════════════════════════════════════════
+    // SOCIAL MEDIA & CONTENT
+    // ═══════════════════════════════════════════════════════════════
+
+    {
+        id: "social-media-campaigns",
+        category: "social",
+        tags: ["Social Media", "Multi-brand"],
+        title: "Social Media Content — Across Brands",
+        excerpt: "Designed and executed social media content across multiple brands and themes — from PR-focused thought leadership to cause-driven campaigns and product promotion.",
+        company: "BearHugs / givfin / Freelance",
+        thumb: "https://mir-s3-cdn-cf.behance.net/projects/404/7bdae8173711803.Y3JvcCwxMjAwLDkzOCwwLDIwNA.png",
+        cover: "https://mir-s3-cdn-cf.behance.net/projects/404/7bdae8173711803.Y3JvcCwxMjAwLDkzOCwwLDIwNA.png",
+        challenge: "Multiple brands needed distinct social content strategies — from simplifying PR jargon for professional audiences to creating animal welfare awareness content and product promotion campaigns.",
+        approach: "Developed theme-based content series including 'Aasan Bhasha vs PR Jargon' (simplifying industry language), 'Small Talk goes a Long Way' (PR insights), animal welfare advocacy posts (Say No to Harmful Colours campaign), and product promotion creatives for ayurvedic brands. Each series had its own visual language and content strategy.",
+        impact: [
+            { number: "Multi", label: "Brands Served" },
+            { number: "Diverse", label: "Content Themes" }
+        ],
+        gallery: ["https://mir-s3-cdn-cf.behance.net/projects/404/7bdae8173711803.Y3JvcCwxMjAwLDkzOCwwLDIwNA.png"],
+        links: [
+            { label: "View Social Posts", url: "https://drive.google.com/drive/folders/1hC2Ki-awy28iljL0-1bexMYS70X0m1ys?usp=sharing" }
+        ]
+    },
+    {
+        id: "product-promotion-social",
+        category: "social",
+        tags: ["Social Media", "Product Promotion"],
+        title: "Product Promotion Social Series",
+        excerpt: "Designed social media post series for ayurvedic/wellness product promotion — combining product photography direction with persuasive copy and clean design.",
+        company: "Freelance",
+        thumb: "https://mir-s3-cdn-cf.behance.net/projects/404/f24045159148099.Y3JvcCwxMDgwLDg0NCwwLDExNw.png",
+        cover: "https://mir-s3-cdn-cf.behance.net/projects/404/f24045159148099.Y3JvcCwxMDgwLDg0NCwwLDExNw.png",
+        challenge: "<!-- PLACEHOLDER: What was the client's social media or product promotion challenge? -->",
+        approach: "<!-- PLACEHOLDER: How did you approach the visual design, copy, and posting strategy? -->",
+        impact: [
+            { number: "17", label: "Behance Views" }
+        ],
+        gallery: ["https://mir-s3-cdn-cf.behance.net/projects/404/f24045159148099.Y3JvcCwxMDgwLDg0NCwwLDExNw.png"],
+        links: [
+            { label: "View on Behance", url: "https://www.behance.net/srishtigupta16" }
+        ]
+    },
+
+    // ═══════════════════════════════════════════════════════════════
+    // FREELANCE & OTHER WORK
+    // ═══════════════════════════════════════════════════════════════
+
+    {
+        id: "feature-story-writing",
+        category: "freelance",
+        tags: ["Writing", "Feature Story"],
+        title: "Feature Story Writing & Editorial",
+        excerpt: "Long-form feature writing including cultural stories, magazine concepts, and blog post ideas — showcasing depth of research and narrative craft.",
+        company: "Personal / Academic",
+        thumb: "assets/feature-story-thumb.jpg",
+        cover: "assets/feature-story-thumb.jpg",
+        challenge: "Developing a distinct editorial voice and the ability to turn real human stories into compelling, publishable long-form narratives.",
+        approach: "Researched, interviewed, and wrote in-depth feature stories — including a piece on a Bharatanatyam dancer's journey that explores the intersection of classical art and contemporary identity. Also developed magazine and blog post concepts.",
+        impact: [
+            { number: "20", label: "Behance Views" },
+            { number: "Long-form", label: "Narrative Craft" }
+        ],
+        gallery: ["https://mir-s3-cdn-cf.behance.net/projects/404/116f98155079733.Y3JvcCwxMjQyLDk3MSwwLDM5MA.jpg"],
+        links: [
+            { label: "View on Behance", url: "https://www.behance.net/gallery/155079733/Feature-Story-Writing" }
+        ]
+    },
+    {
+        id: "logos-corporate-design",
+        category: "freelance",
+        tags: ["Logo Design", "Corporate"],
+        title: "Logo Design & Corporate Collateral",
+        excerpt: "A collection of logo designs and corporate flyer work — from brand mark creation to professional print collateral including the Startup Sherpas Angel Network invite.",
+        company: "Freelance / Multiple",
+        thumb: "https://mir-s3-cdn-cf.behance.net/projects/404/1eaf45154316407.Y3JvcCwzMjYyLDI1NTEsMCw0OTI.png",
+        cover: "https://mir-s3-cdn-cf.behance.net/projects/404/1eaf45154316407.Y3JvcCwzMjYyLDI1NTEsMCw0OTI.png",
+        challenge: "Various clients needed professional brand marks and corporate collateral that communicated credibility and captured their brand essence in a single visual.",
+        approach: "Designed logos balancing simplicity with distinctive character, and created corporate flyers including the 'Exclusive Invite to join Startup Sherpas Angel Network' — combining clear hierarchy, brand colors, and persuasive layout.",
+        impact: [
+            { number: "28", label: "Logo Views" },
+            { number: "Multi", label: "Clients Served" }
+        ],
+        gallery: ["https://mir-s3-cdn-cf.behance.net/projects/404/c5411b201779919.Y3JvcCwxNDAwLDEwOTUsMCww.png"],
+        links: [
+            { label: "View Logos on Behance", url: "https://www.behance.net/gallery/154316407/Logos" },
+            { label: "View Corporate Flyers", url: "https://www.behance.net/gallery/201779919/Corporate-Flyers" }
+        ]
+    },
+    {
+        id: "video-projects",
+        category: "freelance",
+        tags: ["Video", "Creative Foundations"],
+        title: "Creative Video Projects — Early Work",
+        excerpt: "Collaborative video projects from college: vox pops, creative films, and public service announcements — foundational storytelling and production experience.",
+        company: "Academic / Early Work",
+        thumb: "https://mir-s3-cdn-cf.behance.net/projects/404/81b94d155328963.Y3JvcCwxOTk5LDE1NjQsMCwxOQ.png",
+        cover: "https://mir-s3-cdn-cf.behance.net/projects/404/81b94d155328963.Y3JvcCwxOTk5LDE1NjQsMCwxOQ.png",
+        challenge: "Academic briefs requiring concept development, scripting, storyboarding, and video production as part of collaborative team projects.",
+        approach: "Contributed to multiple video formats — a vox pop documentary, a creative short film, and a group PSA — developing skills in scripting, visual direction, and collaborative production workflow.",
+        impact: [
+            { number: "3", label: "Video Projects" }
+        ],
+        gallery: ["https://mir-s3-cdn-cf.behance.net/projects/404/81b94d155328963.Y3JvcCwxOTk5LDE1NjQsMCwxOQ.png"],
+        links: [
+            { label: "View Projects", url: "https://drive.google.com/drive/folders/1udqPqfb_HAehvd3Bhyzh4wfkdNk3zeCn?usp=sharing" }
+        ]
+    }
+
+    // ─── TO ADD A NEW PROJECT, COPY THE TEMPLATE BELOW ───
+    // {
+    //     id: "unique-project-id",
+    //     category: "strategy|seo|brand-comm|creative|social|freelance",
+    //     tags: ["Tag 1", "Tag 2"],
+    //     title: "Project Title",
+    //     excerpt: "One-sentence summary of the project.",
+    //     company: "Company Name",
+    //     thumb: "", // image URL for the card thumbnail
+    //     cover: "", // image URL for the modal cover
+    //     challenge: "What was the problem?",
+    //     approach: "How did you solve it?",
+    //     impact: [
+    //         { number: "X%", label: "Metric Name" }
+    //     ],
+    //     gallery: ["img1.jpg", "img2.jpg"],
+    //     links: [
+    //         { label: "Link Label", url: "https://..." }
+    //     ]
+    // },
+];
+
+
+// ===================================================================
+// RENDERING ENGINE — NO NEED TO EDIT BELOW UNLESS CUSTOMIZING LAYOUT
+// ===================================================================
+
+const arrowSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+
+function renderCard(cs) {
+    const thumbHTML = cs.thumb
+        ? `<img src="${cs.thumb}" alt="${cs.title}" loading="lazy">`
+        : `<div class="case-card-thumb-placeholder">Add Thumbnail Image</div>`;
+
+    return `
+    <div class="case-card reveal" data-category="${cs.category}" data-id="${cs.id}">
+        <div class="case-card-thumb">${thumbHTML}</div>
+        <div class="case-card-body">
+            <div class="case-card-tags">${cs.tags.map(t => `<span class="case-card-tag">${t}</span>`).join('')}</div>
+            <h3 class="case-card-title">${cs.title}</h3>
+            <p class="case-card-excerpt">${cs.excerpt}</p>
+            <div class="case-card-meta">
+                <span class="case-card-company">${cs.company}</span>
+                <div class="case-card-arrow">${arrowSVG}</div>
+            </div>
+        </div>
+    </div>`;
+}
+
+function renderModal(cs) {
+    const coverHTML = cs.cover
+        ? `<img src="${cs.cover}" alt="${cs.title}">`
+        : `<div class="modal-gallery-placeholder">Add Cover Image</div>`;
+
+    const impactHTML = cs.impact.map(i => `
+        <div class="modal-impact-item">
+            <div class="modal-impact-number">${i.number}</div>
+            <div class="modal-impact-label">${i.label}</div>
+        </div>`).join('');
+
+    const galleryHTML = cs.gallery.map(img => `
+        <div class="modal-gallery-item">
+            ${img ? `<img src="${img}" alt="Project image" loading="lazy">` : `<div class="modal-gallery-placeholder">Add Image</div>`}
+        </div>`).join('');
+
+    const linksHTML = cs.links.map(l => `
+        <a href="${l.url}" target="_blank" class="btn btn-outline" style="font-size:0.78rem;padding:0.6rem 1.25rem;">${l.label} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+    `).join('');
+
+    document.getElementById('modalHeroImg').innerHTML = coverHTML;
+    document.getElementById('modalContent').innerHTML = `
+        <div class="modal-tags">${cs.tags.map(t => `<span class="modal-tag">${t}</span>`).join('')}</div>
+        <h2 class="modal-title">${cs.title}</h2>
+        <div class="modal-company">${cs.company}</div>
+
+        <div class="modal-section">
+            <div class="modal-section-title">The Challenge</div>
+            <p>${cs.challenge || '<em style="color:var(--text-muted);">Add your challenge description here.</em>'}</p>
+        </div>
+
+        <div class="modal-section">
+            <div class="modal-section-title">The Approach</div>
+            <p>${cs.approach || '<em style="color:var(--text-muted);">Add your approach description here.</em>'}</p>
+        </div>
+
+        <div class="modal-section">
+            <div class="modal-section-title">The Impact</div>
+            <div class="modal-impact">${impactHTML}</div>
+        </div>
+
+        <div class="modal-section">
+            <div class="modal-section-title">Project Gallery</div>
+            <div class="modal-gallery">${galleryHTML}</div>
+        </div>
+
+        ${linksHTML ? `<div class="modal-links">${linksHTML}</div>` : ''}
+    `;
+}
+
+// ── INIT GRID ──
+const grid = document.getElementById('portfolioGrid');
+grid.innerHTML = CASE_STUDIES.map(renderCard).join('');
+
+// ── FILTER ──
+document.getElementById('filterBar').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.case-card').forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+    });
+});
+
+// ── MODAL OPEN/CLOSE ──
+grid.addEventListener('click', e => {
+    const card = e.target.closest('.case-card');
+    if (!card) return;
+    const cs = CASE_STUDIES.find(c => c.id === card.dataset.id);
+    if (!cs) return;
+    renderModal(cs);
+    document.getElementById('modalOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+}
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('modalOverlay').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── NAVIGATION ──
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+document.getElementById('navToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+});
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── SMOOTH SCROLL FOR NAV LINKS ──
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.getElementById('navLinks').classList.remove('open');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
